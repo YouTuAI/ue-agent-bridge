@@ -1,0 +1,28 @@
+{
+  "name": "ue-agent-bridge",
+  "version": "0.1.0",
+  "description": "MCP bridge for Unreal Engine — by YouTu3D Studio",
+  "main": "dist/index.js",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc && node dist/index.js",
+    "start": "node dist/index.js"
+  },
+  "keywords": [
+    "mcp",
+    "unreal-engine",
+    "ue5",
+    "ai-agent",
+    "bridge"
+  ],
+  "author": "YouTu3D Studio",
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^25.9.1",
+    "typescript": "^5.3.0"
+  }
+}

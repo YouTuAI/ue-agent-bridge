@@ -1,0 +1,68 @@
+UE Agent Bridge — Demo Walkthrough 输出记录
+============================================================
+执行时间: 2026-05-30 21:48
+结果: 12/12 全部通过
+
+────────────────────────────────────────
+Step 1: ue_ping — 连接测试
+────────────────────────────────────────
+→ pong ✅
+
+────────────────────────────────────────
+Step 2: level_get_actors — 列出所有Actor
+────────────────────────────────────────
+→ 返回完整Actor列表（WorldSettings, StaticMeshActors, TextRenderActors等） ✅
+
+────────────────────────────────────────
+Step 3: level_get_actors(class_filter=StaticMeshActor) — 按类型过滤
+────────────────────────────────────────
+→ 过滤出StaticMesh类型的Actor ✅
+
+────────────────────────────────────────
+Step 4: editor_get_selected — 获取选中物体
+────────────────────────────────────────
+→ 检测到TextRenderActor被选中 ✅
+
+────────────────────────────────────────
+Step 5: level_move_actor Ball_1 (2, -1, 1.5) — 移动Actor
+────────────────────────────────────────
+→ success: true, Ball_1 移动到指定坐标 ✅
+
+────────────────────────────────────────
+Step 6: level_rotate_actor Cone_01 yaw=45 — 旋转Actor
+────────────────────────────────────────
+→ success: true, Cone_01 yaw=45度 ✅
+
+────────────────────────────────────────
+Step 7: level_scale_actor Pillar_01 (0.5, 0.5, 2.0) — 缩放Actor
+────────────────────────────────────────
+→ success: true, Pillar_01 缩放 0.5x0.5x2.0 ✅
+
+────────────────────────────────────────
+Step 8: asset_search "BP_Demo" — 搜索资源
+────────────────────────────────────────
+→ 找到 BP_DemoActor (Blueprint, /Game/DemoMaterials/) ✅
+
+────────────────────────────────────────
+Step 9: blueprint_read BP_DemoActor — 读取蓝图结构
+────────────────────────────────────────
+→ 返回 parent_class=Actor, 1 function (UserConstructionScript) ✅
+
+────────────────────────────────────────
+Step 10: ue_execute_command "stat fps" — 执行控制台命令
+────────────────────────────────────────
+→ success: true ✅
+
+────────────────────────────────────────
+Step 11: ue_execute_python — 执行Python
+────────────────────────────────────────
+→ success: true, Python在Editor中执行 ✅
+
+────────────────────────────────────────
+Step 12: level_delete_actor NonExistentActor — 错误处理
+────────────────────────────────────────
+→ 返回结构化错误: {code: -2, message: "Actor not found"} ✅
+
+============================================================
+工具覆盖: 11/15 (73%)
+未演示: blueprint_compile, blueprint_compile_all, blueprint_set_property, level_spawn_actor

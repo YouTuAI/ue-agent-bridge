@@ -1,0 +1,15 @@
+node_modules/
+dist/
+*.tsbuildinfo
+
+# Local build config
+build-config.bat
+
+# Generated files
+mcp-config.json
+
+# UE
+Intermediate/
+Binaries/
+Saved/
+DerivedDataCache/
